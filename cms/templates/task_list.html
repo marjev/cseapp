@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Tasks</h1>
+    <table border=1>
+      <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Details</th>
+      </thead>
+      <tbody>
+        {% for task in object_list %}
+          <tr>
+            <td>{{ task }}</td>
+            <td>{{ task.text }}</td>
+            <td>
+              TBD
+              URL
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>        
+    </table>
+{% endblock %}
