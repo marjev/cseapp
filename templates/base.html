@@ -11,12 +11,15 @@
 
     <link
       rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/base.css' %}">
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
+      integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA="
+      crossorigin="anonymous" />
 
     {% block stylesheets %}{% endblock %}
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
   </body>
 </html>

@@ -1,16 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block stylesheets %}
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="{% static 'css/task_list.css' %}">
-{% endblock %}
-
 {% block content %}
-  <h1>Tasks</h1>
-  <table border=1 padding=1>
+  <h1 class="is-size-4">Tasks</h1>
+  <table class="table is-fullwidth">
     <thead>
       <th>Name</th>
       <th>Description</th>

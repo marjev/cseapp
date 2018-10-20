@@ -19,11 +19,23 @@
 {% endblock %}
 
 {% block content %}
-  <a href="{% url 'task-list' %}">Back</a>
-  <h1>{{ object }}</h1>
-  <hr>
-  <p>{{ object.text }}</p>
-  <div>
-    <textarea id="solution" class="hidden">{{ object.solution }}</textarea>
+  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="{% url 'task-list' %}">Home</a></li>
+    </ul>
+  </nav>
+  <h1 class="is-size-4 title">{{ object }}</h1>
+  <article class="message">
+    <div class="message-body">{{ object.text }}</div>
+  </article>
+  <div class="columns">
+    <div class="column is-6">
+      <h2 class="is-size-5 subtitle">Solution</h2>
+      <textarea id="solution" class="is-invisible">{{ object.solution }}</textarea>
+    </div>
+    <div class="column is-6">
+      <h2 class="is-size-5 subtitle">Abstract Syntax Tree</h2>
+      {{ object.ast_tree }}
+    </div>
   </div>
 {% endblock %}
