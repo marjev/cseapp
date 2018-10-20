@@ -1,24 +1,29 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'css/task_list.css' %}">
+{% endblock %}
 
 {% block content %}
-    <h1>Tasks</h1>
-    <table border=1>
-      <thead>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Details</th>
-      </thead>
-      <tbody>
-        {% for task in object_list %}
-          <tr>
-            <td>{{ task }}</td>
-            <td>{{ task.text }}</td>
-            <td>
-              TBD
-              URL
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>        
-    </table>
+  <h1>Tasks</h1>
+  <table border=1 padding=1>
+    <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Details</th>
+    </thead>
+    <tbody>
+      {% for task in object_list %}
+        <tr>
+          <td>{{ task }}</td>
+          <td>{{ task.text }}</td>
+          <td><a href="{% url 'task-detail' task.id %}">View more</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>        
+  </table>
 {% endblock %}
