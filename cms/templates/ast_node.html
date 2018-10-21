@@ -1,0 +1,5 @@
+<div class="node {{ node.ast_type|lower }}">
+  {% if node.ast_type == 'Module' %}
+    {% include 'ast_module.html' with children=node.body %}
+  {% endif %}
+</div>

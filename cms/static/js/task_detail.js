@@ -1,9 +1,13 @@
-const loadEditor = () => {
+function loadEditor() {
   const textarea = $('#solution')[0];
-  const editor = CodeMirror.fromTextArea(textarea, {
+  CodeMirror.fromTextArea(textarea, {
     lineNumbers: true,
     readOnly: true
   });
 };
 
-$(loadEditor);
+const loadTask = async () => {
+  loadEditor();
+};
+
+$(loadTask);

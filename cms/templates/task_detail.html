@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block scripts %}
@@ -13,9 +13,14 @@
 {% block stylesheets %}
 <link
   rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link
+  rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.2/codemirror.min.css"
   integrity="sha256-I8NyGs4wjbMuBSUE40o55W6k6P7tu/7G28/JGUUYCIs="
   crossorigin="anonymous" />
+<link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'css/task_detail.css' %}"/>
 {% endblock %}
 
 {% block content %}
@@ -35,7 +40,7 @@
     </div>
     <div class="column is-6">
       <h2 class="is-size-5 subtitle">Abstract Syntax Tree</h2>
-      {{ object.ast_json }}
+      {% include 'ast_node.html' with node=object.ast_json %}
     </div>
   </div>
 {% endblock %}

@@ -1,0 +1,6 @@
+<span><i class="fa fa-folder-open-o is-size-4" aria-hidden="true"></i></span>
+<span class="tag is-primary has-text-weight-bold is-pulled-right">Modul</span>
+
+{% for node in children %}
+  {% include 'ast_node.html' with node=node %}
+{% endfor %}
