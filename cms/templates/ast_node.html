@@ -5,5 +5,7 @@
     {% include 'ast_expression.html' with value=node.value %}
   {% elif node.ast_type == 'Num' %}
     {% include 'ast_num.html' with value=node.value %}
+  {% elif node.ast_type == 'int' %}
+    {% include 'ast_int.html' with node=node %}
   {% endif %}
 </div>
