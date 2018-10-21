@@ -1,5 +1,11 @@
 import ast
 
+from astexport.export import export_json
+
+
 def get_ast_tree(code):
-    tree = ast.parse(code)
-    return ast.dump(tree)
+    return ast.parse(code)
+
+
+def get_ast_tree_as_json(tree):
+    return export_json(tree)

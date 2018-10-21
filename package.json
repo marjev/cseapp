@@ -16,8 +16,5 @@
     "url": "https://github.com/marjev/cseapp/issues"
   },
   "homepage": "https://github.com/marjev/cseapp#readme",
-  "dependencies": {
-    "d3": "^5.7.0",
-    "d3-tree": "^1.0.20"
-  }
+  "dependencies": {}
 }

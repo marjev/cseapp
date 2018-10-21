@@ -1,6 +1,6 @@
 from django.db import models
 
-from kms.ast import get_ast_tree
+from kms.ast import get_ast_tree, get_ast_tree_as_json
 
 
 class Task(models.Model):
@@ -12,4 +12,9 @@ class Task(models.Model):
 
     @property
     def ast_tree(self):
-        return get_ast_tree(self.solution)
+        tree = get_ast_tree(self.solution)
+        return tree
+    
+    @property
+    def ast_json(self):
+        return get_ast_tree_as_json(self.ast_tree)
