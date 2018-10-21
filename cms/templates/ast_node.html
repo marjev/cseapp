@@ -1,5 +1,7 @@
 <div class="node {{ node.ast_type|lower }}">
   {% if node.ast_type == 'Module' %}
     {% include 'ast_module.html' with children=node.body %}
+  {% elif node.ast_type == 'Expr' %}
+    {% include 'ast_expression.html' with value=node.value %}
   {% endif %}
 </div>
